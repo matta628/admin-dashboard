@@ -70,6 +70,44 @@ li{
   background-color: var(--main-header);
   position: relative;
   z-index: 2;
+  display: grid;
+  grid: "top" 1fr "heading" 1fr / 1fr;
+}
+
+.top{
+  grid-area: top;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.search{
+  display: flex;
+  gap: 10px;
+}
+
+.account{
+  display: flex;
+  gap: 15px;
+}
+
+.heading{
+  grid-area: heading;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .dashboard{
