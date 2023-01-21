@@ -1,23 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;400;700&display=swap');
 
 :root{
-  --main-highlight: #ECB365;
-  --main-contrast: #064663;
-  --main-side: #04293A;
-  --main-background: #041C32;
+  --main-foreground: #DED93E;
+  --main-background: #FFA303;
+  --main-header: #FFCD58;
+  --main-side: #F76201;
+  --main-font-color: #3B0918;
 }
 
 /* :root{
-  --main-highlight: #ECB365;
-  --main-contrast: #064663;
-  --main-side: #04293A;
-  --main-background: #041C32;
+  --main-foreground: #FBFAF8;
+  --main-background: #e7decd;
+  --main-header: #9cc274;
+  --main-side: #698f3f;
+  --main-font-color: #0a122a;
 } */
+
+/* :root{
+  --main-foreground: #11579a;
+  --main-background: #041C32;
+  --main-header: #0f5a7d;
+  --main-side: #04293A;
+  --main-font-color: rgb(80, 169, 191);
+}  */
 
 * {
   padding: 0;
   margin: 0;
-  color: var(--main-highlight);
+  color: var(--main-font-color);
   font-family: 'Lexend', sans-serif;
 }
 
@@ -35,12 +45,15 @@ li{
 }
 
 .sidebar{
+  padding: 15px;
   grid-area: sidebar;
   background-color: var(--main-side);
   color: var(--main-highlight);
   display: flex;
   flex-direction: column;
   gap: 50px;
+  position: relative;
+  z-index: 3;
 }
 
 .logo {
@@ -52,12 +65,11 @@ li{
 }
 
 .header{
+  padding: 15px;
   grid-area: header;
-  background-color: var(--main-highlight);
-}
-
-h3 {
-  color: var(--main-background);
+  background-color: var(--main-header);
+  position: relative;
+  z-index: 2;
 }
 
 .dashboard{
@@ -66,9 +78,11 @@ h3 {
   background-color: var(--main-background);
   display: grid;
   grid: "projects announcements" 1fr
-        "projects trending" 1fr
-        / 3fr 1fr;
+  "projects trending" 1fr
+  / 3fr 1fr;
   gap: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .projects{
@@ -101,11 +115,15 @@ h3 {
   height: 100%;
 }
 .container {
-  background-color: var(--main-contrast);
   height: 100%;
 }
 
 .card, .container{
   border-radius: 15px;
   padding: 15px;
+  background-color: var(--main-foreground);
+}
+
+.card, .container, .header, .sidebar{
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
