@@ -17,10 +17,10 @@ li{
 }
 
 .wrapper{
-  height: auto;
+  height: 100vh;
   display: grid;
   grid: "sidebar header" 1fr
-        "sidebar dashboard" 5fr
+        "sidebar dashboard" 5.5fr
         / 1fr 4fr;
   overflow: auto;
 }
@@ -52,37 +52,51 @@ h3 {
 }
 
 .dashboard{
-  grid-area: dashboard
+  grid-area: dashboard;
+  padding: 30px 20px 50px 20px;
+  background-color: var(--main-background);
+  display: grid;
+  grid: "projects announcements" 1fr
+        "projects trending" 1fr
+        / 3fr 1fr;
+  gap: 20px;
 }
 
 .projects{
-  background-color: var(--main-background);
+  grid-area: projects;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-cards{
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 20px;
+  grid: 1fr 1fr 1fr / 1fr 1fr;
   gap: 20px;
 }
 
 .card{
-  height: 200px;
   background-color: var(--main-contrast);
 }
 
 .announcements{
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  background-color: var(--main-background);
+  grid-area: announcements;
 }
 
 .trending{
-  padding: 20px;
-  background-color: var(--main-background);
+  display: flex;
+  flex-direction: column;
+  grid-area: trending;
+  height: 100%;
 }
 .container {
   background-color: var(--main-contrast);
   height: 100%;
+}
+
+.card, .container{
+  border-radius: 15px;
+  padding: 15px;
 }
