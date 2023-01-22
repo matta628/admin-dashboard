@@ -101,6 +101,7 @@ a:hover{
   grid: "top" 1fr "heading" 1fr / 1fr;
 }
 
+
 .top{
   grid-area: top;
   width: 100%;
@@ -116,6 +117,9 @@ a:hover{
   gap: 10px;
   width: 100%;
   align-items: center;
+}
+.search img{
+  height: 30px;
 }
 
 input[type="search"]{
