@@ -95,7 +95,7 @@ a:hover{
   padding: 15px 50px;
   grid-area: header;
   background-color: var(--main-header);
-  position: relative;
+  position: sticky;
   z-index: 2;
   display: grid;
   grid: "top" 1fr "heading" 1fr / 1fr;
@@ -138,7 +138,8 @@ input[type="search"]::-webkit-search-cancel-button {
   align-items: center;
 }
 
-.account img{
+.account img,
+.trending img{
   height: 50px;
   width: auto;
 }
@@ -206,9 +207,10 @@ input[type="button"]:hover{
   gap: 20px;
   position: relative;
   z-index: 1;
+  overflow: auto;
 }
 
-.dashboard .title {
+.dashboard .section-title {
   font-size: 20px;
 }
 
@@ -218,7 +220,8 @@ input[type="button"]:hover{
   flex-direction: column;
 }
 
-.project-title{
+.project .title,
+.announcement .title{
   font-weight: 700;
 }
 
@@ -261,17 +264,63 @@ input[type="button"]:hover{
   gap: 10px;
 }
 
-.container {
-  height: 100%;
-}
-
 .card, .container{
   border-radius: 10px;
   padding: 25px;
   background-color: var(--main-foreground);
 }
 
-.card:hover, .container:hover{
+.container{
+  height: 100%;
+}
+
+.container .background {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  place-items: left;
+  gap: 1px;
+  background-color: var(--main-accent);
+}
+
+.announcement{
+  background-color: var(--main-foreground);
+  display: grid;
+  justify-content: left;
+  align-items: center;
+}
+
+.announcement .title{
+  align-self: end;
+}
+
+.announcement .desc{
+  align-self: start;
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.desc {
+  font-weight: 200;
+}
+
+.trending .container{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-items: space-between;
+}
+
+.user{
+  display: grid;
+  grid-template-columns: 50px;
+  grid-auto-flow: column;
+  gap: 15px
+}
+.trending .name{
+  font-weight: 200;
+}
+
+.card:hover, .trending .container:hover, .announcement:hover{
   background-color: var(--main-fg-light);
 }
 
