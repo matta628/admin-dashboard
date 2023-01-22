@@ -169,10 +169,12 @@ input[type="search"]::-webkit-search-cancel-button {
 img{
   border-radius: 50px;
 }
+.user-greeting {
+  font-weight: 700;
+}
 
 .user-name{
   font-size: 24px;
-  font-weight: 700;
 }
 
 .buttons{
@@ -193,8 +195,6 @@ input[type="button"]:hover{
   background-color: var(--main-side-light);
 }
 
-
-
 .dashboard{
   grid-area: dashboard;
   padding: 30px 20px 50px 20px;
@@ -208,10 +208,18 @@ input[type="button"]:hover{
   z-index: 1;
 }
 
+.dashboard .title {
+  font-size: 20px;
+}
+
 .projects{
   grid-area: projects;
   display: flex;
   flex-direction: column;
+}
+
+.project-title{
+  font-weight: 700;
 }
 
 .project-cards{
@@ -224,6 +232,15 @@ input[type="button"]:hover{
 .card{
   background-color: var(--main-contrast);
   border-left: 10px inset var(--main-accent);
+  display: grid;
+  align-content: space-between;
+}
+
+.project-buttons{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: right;
+  gap: 10px;
 }
 
 .announcements{
@@ -238,13 +255,19 @@ input[type="button"]:hover{
   grid-area: trending;
   height: 100%;
 }
+
+.projects, .announcements,
+.trending{
+  gap: 10px;
+}
+
 .container {
   height: 100%;
 }
 
 .card, .container{
   border-radius: 10px;
-  padding: 10px;
+  padding: 25px;
   background-color: var(--main-foreground);
 }
 
